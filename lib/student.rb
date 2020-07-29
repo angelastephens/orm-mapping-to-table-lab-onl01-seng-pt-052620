@@ -30,7 +30,12 @@ class Student
   end
 
 
-
+  def save
+    sql = <<-SQL
+    INSERT INTO studetns(name,grade)
+    VALUES(?,?)
+    sql
+  end
 
   def self.creat(name:,grade:)
     student = Student.new(name, grade)
