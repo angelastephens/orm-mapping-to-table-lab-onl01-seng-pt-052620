@@ -35,7 +35,7 @@ class Student
     INSERT INTO studetns(name,grade)
     VALUES(?,?)
     SQL
-  @id=DB [:conn].execute(sql, self.name, self.grade)
+  @id=DB[:conn].execute(sql, self.name, self.grade)
   From students [0][0]
   end
 
