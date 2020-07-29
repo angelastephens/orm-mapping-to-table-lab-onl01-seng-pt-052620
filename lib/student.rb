@@ -34,7 +34,9 @@ class Student
     sql = <<-SQL
     INSERT INTO studetns(name,grade)
     VALUES(?,?)
-    sql
+    SQL
+  @id=DB [:conn].execute(sql, self.name, self.grade)
+  
   end
 
   def self.creat(name:,grade:)
