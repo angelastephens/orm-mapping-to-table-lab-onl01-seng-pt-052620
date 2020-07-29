@@ -35,8 +35,7 @@ class Student
     INSERT INTO studetns(name,grade)
     VALUES(?,?)
     SQL
-  @id=DB[:conn].execute(sql, self.name, self.grade)
-  From students [0][0]
+  @id=DB[:conn].execute("Select last_insert_rowid() From students" [0][0]
   end
 
   def self.create(name:,grade:)
